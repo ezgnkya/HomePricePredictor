@@ -26,5 +26,3 @@ def predict_process(build_age, gross_square, room_count, town_name):
     return int(predicted_price[0])
 
 
-predict_process(build_age='0 (Yeni)', gross_square=160, room_count= '4+1', town_name='Soğanlı Mahallesi')
-
