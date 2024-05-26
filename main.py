@@ -50,7 +50,7 @@ def predict():
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     df.to_csv('log.csv', index=False, encoding='utf-8-sig')
 
-    return jsonify({'predicted_price': price})
+    return jsonify({'predicted_price': f"{price} TL"})
 
 
 if __name__ == "__main__":

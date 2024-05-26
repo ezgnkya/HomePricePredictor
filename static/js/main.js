@@ -49,7 +49,7 @@
                         contentType: "application/json",
                         data: JSON.stringify(data),
                         success: function (response) {
-                            $("#tahmin-sonuc").html("<p>Tahmini Fiyat: " + response.predicted_price + " TL</p>");
+                            $("#tahmin-sonuc").html("<p>Tahmini Fiyat: " + response.predicted_price + "</p>");
                         },
 
                         complete: function () {
