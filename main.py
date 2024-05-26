@@ -39,6 +39,7 @@ def predict():
                             gross_square=int(data['gross_square']),
                             room_count=data['room'],
                             town_name=data['neighborhood'])
+    price = "{:,.0f}".format(price).replace(',', '.')
 
     global df
     new_row = {'Bina Yaşı': data['age'],
