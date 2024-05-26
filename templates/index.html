@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Konut Fiyat Tahmini</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f8f9fa;
+            padding-top: 56px;
+        }
+
+        .container {
+            max-width: 1600px;
+            width: 100%;
+        }
+
+        .contact-wrap {
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60%;
+            max-width: 1000px;
+            min-width: 800px;
+        }
+
+        .form-group {
+            width: 100%;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+        }
+
+        #tahmin-sonuc {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            HomePricePredictor
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDefault"
+                aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarDefault">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">Hakkında</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sss.html">SSS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                    <h3 class="mb-4">Yapay Zeka Destekli Fiyat Tahmini</h3>
+                    <div id="form-message" class="mb-4">
+                        Satmayı ya da almayı düşündüğünüz evin tahmini değerini öğrenin!
+                    </div>
+                    <form id="contactForm" class="contactForm" style="width: 600px;">
+                        <div class="form-group">
+                            <label class="label" for="room">Oda Sayısı</label>
+                            <select name="room" id="room">
+                                <option value="1+0">1+0</option>
+                                <option value="1+1">1+1</option>
+                                <option value="1.5+1">1.5+1</option>
+                                <option value="2+1">2+1</option>
+                                <option value="2+2">2+2</option>
+                                <option value="3+1">3+1</option>
+                                <option value="3+2">3+2</option>
+                                <option value="4+1">4+1</option>
+                                <option value="4+2">4+2</option>
+                                <option value="5+1">5+1</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="age">Binanın Yaşı</label>
+                            <select name="age" id="age">
+                                <option value="0 (Yeni)">0 (Yeni)</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5-10">5-10</option>
+                                <option value="11-15">11-15</option>
+                                <option value="16-20">16-20</option>
+                                <option value="21 Ve Üzeri">21 Ve Üzeri</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="neighborhood">Mahalle</label>
+                            <select name="neighborhood" id="neighborhood">
+                                <option value="Bahçelievler Mahallesi">Bahçelievler Mahallesi</option>
+                                <option value="Cumhuriyet Mahallesi">Cumhuriyet Mahallesi</option>
+                                <option value="Çobançeşme Mahallesi">Çobançeşme Mahallesi</option>
+                                <option value="Fevzi Çakmak Mahallesi">Fevzi Çakmak Mahallesi</option>
+                                <option value="Hürriyet Mahallesi">Hürriyet Mahallesi</option>
+                                <option value="Kocasinan Merkez Mahallesi">Kocasinan Merkez Mahallesi</option>
+                                <option value="Siyavuşpaşa Mahallesi">Siyavuşpaşa Mahallesi</option>
+                                <option value="Soğanlı Mahallesi">Soğanlı Mahallesi</option>
+                                <option value="Şirinevler Mahallesi">Şirinevler Mahallesi</option>
+                                <option value="Yenibosna Merkez Mahallesi">Yenibosna Merkez Mahallesii</option>
+                                <option value="Zafer Mahallesi">Zafer Mahallesi</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="gross_square">Alan (Brüt m²)</label>
+                            <input type="number" class="form-control" name="gross_square" id="gross_square" min="40"
+                                   max="220"
+                                   placeholder="Min: 40 Max: 220">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="predictButton" class="btn btn-primary">Tahmin</button>
+                            <div class="submitting"></div>
+                        </div>
+                        <div id="form-message-warning" class="mb-4"></div>
+                        <div id="tahmin-sonuc"></div> <!-- Tahmin sonucunu gösterecek bölüm -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/popper.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/jquery.validate.min.js"></script>
+<script src="../static/js/main.js"></script>
+<script>
+    function showPrediction(prediction) {
+        $('#tahmin-sonuc').text('Tahmini Fiyat: ' + prediction);
+    }
+
+    $('#predictButton').click(function () {
+        var room = $('#room').val();
+        var age = $('#age').val();
+        var neighborhood = $('#neighborhood').val();
+        var gross_square = $('#gross_square').val();
+
+        // AJAX isteği gönder
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/predict",
+            data: JSON.stringify({
+                "room": room,
+                "age": age,
+                "neighborhood": neighborhood,
+                "gross_square": gross_square
+            }),
+            success: function (data) {
+                showPrediction(data.predicted_price);
+            },
+            error: function () {
+                $('#tahmin-sonuc').text('Tahmin edilemedi.');
+            }
+        });
+    });
+</script>
+</body>
+</html>
