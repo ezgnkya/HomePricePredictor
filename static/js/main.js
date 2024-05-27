@@ -1,7 +1,6 @@
 (function ($) {
     "use strict";
 
-
     var contactForm = function () {
         if ($('#contactForm').length > 0) {
             $("#contactForm").validate({
@@ -42,8 +41,8 @@
                         "gross_square": gross_square
                     };
 
-                    $(".submitting").css('display', 'block').text('Tahmin Ediliyor...');
                     $("#predictButton").attr("disabled", true);
+                    $(".submitting").css('display', 'block').text('Tahmin Ediliyor...');
 
                     $.ajax({
                         type: "POST",

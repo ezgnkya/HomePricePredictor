@@ -42,7 +42,7 @@ def predict():
     price = "{:,.0f}".format(price).replace(',', '.')
 
     global df
-    new_row = {'Bina Yaşı': data['age'],
+    new_row = {'Bina Yaşı': f'"{data["age"]}"',
                'Oda Sayısı': data['room'],
                'Brüt Metrekare Alanı': data['gross_square'],
                'Mahalle': data['neighborhood'],
