@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
 
-    // Form validation
+
     var contactForm = function () {
         if ($('#contactForm').length > 0) {
             $("#contactForm").validate({
@@ -27,7 +27,9 @@
                         max: jQuery.validator.format("En fazla {0} olabilir")
                     }
                 },
-                submitHandler: function (form) {
+                submitHandler: function (form, event) {
+                    event.preventDefault();
+
                     var room = $("select[name='room']").val();
                     var age = $("select[name='age']").val();
                     var neighborhood = $("select[name='neighborhood']").val();
@@ -41,8 +43,8 @@
                     };
 
                     $(".submitting").css('display', 'block').text('Tahmin Ediliyor...');
+                    $("#predictButton").attr("disabled", true);
 
-                    // Send AJAX request
                     $.ajax({
                         type: "POST",
                         url: "/predict",
@@ -51,9 +53,9 @@
                         success: function (response) {
                             $("#tahmin-sonuc").html("<p>Tahmini Fiyat: " + response.predicted_price + "</p>");
                         },
-
                         complete: function () {
                             $(".submitting").css('display', 'none');
+                            $("#predictButton").attr("disabled", false);
                         }
                     });
                 }
