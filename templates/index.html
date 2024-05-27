@@ -8,51 +8,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: #f8f9fa;
-            padding-top: 56px;
-        }
-
         .container {
             max-width: 1600px;
             width: 100%;
-        }
-
-        .contact-wrap {
-            background: #fff;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 60%;
-            max-width: 1000px;
-            min-width: 800px;
         }
 
         .form-group {
             width: 100%;
         }
 
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            margin-bottom: 10px;
-        }
-
-        .btn-primary {
-            display: block;
-            width: 100%;
-        }
 
         #tahmin-sonuc {
             margin-top: 20px;
@@ -91,7 +55,7 @@
                     <div id="form-message" class="mb-4">
                         Satmayı ya da almayı düşündüğünüz evin tahmini değerini öğrenin!
                     </div>
-                    <form id="contactForm" class="contactForm" style="width: 600px;">
+                    <form id="contactForm" class="contactForm home-label">
                         <div class="form-group">
                             <label class="label" for="room">Oda Sayısı</label>
                             <select name="room" id="room">
@@ -148,7 +112,7 @@
                             <div class="submitting"></div>
                         </div>
                         <div id="form-message-warning" class="mb-4"></div>
-                        <div id="tahmin-sonuc"></div> <!-- Tahmin sonucunu gösterecek bölüm -->
+                        <div id="tahmin-sonuc"></div>
                     </form>
                 </div>
             </div>

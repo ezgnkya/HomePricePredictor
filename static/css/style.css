@@ -41,11 +41,11 @@ body {
 
 .contact-wrap {
     background: var(--white);
-    padding: 40px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 40px;
     width: 60%;
     max-width: 1000px;
     min-width: 800px;
@@ -75,6 +75,15 @@ body {
     border: 1px solid var(--gray);
     background-color: var(--light);
     margin-bottom: 10px;
+}
+
+.home {
+    margin: 0px;
+    padding: 0px;
+}
+
+.home-label {
+    width: 600px;
 }
 
 input,
@@ -143,7 +152,8 @@ button,
     background-color: var(--blue);
 }
 
-.btn.btn-primary:hover, .btn.btn-primary:focus {
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
     border-color: #1c408e !important;
     background: #1c408e !important;
 }
@@ -200,14 +210,13 @@ button,
     }
 
     .form-group input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none; /* Çerçeveyi kaldır */
-    background-color: var(--light);
-    margin-bottom: 10px;
-}
-
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--light);
+        margin-bottom: 10px;
+    }
 
     .form-inline .form-control {
         display: inline-block;
@@ -261,6 +270,32 @@ button,
     }
 }
 
+@media (max-width: 575px) {
+    .sss {
+        margin-top: 70rem;
+    }
+
+    .about {
+        margin-top: 10rem;
+    }
+
+    .home {
+        padding: 0px;
+        width: auto;
+    }
+
+    .home-label {
+        width: auto;
+    }
+
+    .contact-wrap {
+        padding: 0;
+        width: auto;
+        max-width: 550px;
+        min-width: 200px;
+    }
+}
+
 .form-control-plaintext {
     display: block;
     width: 100%;
@@ -274,7 +309,8 @@ button,
     border-width: 1px 0;
 }
 
-.form-control-plaintext.form-control-sm, .form-control-plaintext.form-control-lg {
+.form-control-plaintext.form-control-sm,
+.form-control-plaintext.form-control-lg {
     padding-right: 0;
     padding-left: 0;
 }
@@ -295,7 +331,8 @@ button,
     border-radius: 0.3rem;
 }
 
-select.form-control[size], select.form-control[multiple] {
+select.form-control[size],
+select.form-control[multiple] {
     height: auto;
 }
 
@@ -313,7 +350,8 @@ select.form-control:focus::-ms-value {
     background-color: #fff;
 }
 
-select.form-control[size], select.form-control[multiple] {
+select.form-control[size],
+select.form-control[multiple] {
     height: auto;
 }
 
